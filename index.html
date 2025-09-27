@@ -1,110 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Samuel Onuoha – Digital Engineering | BIM | VDC</title>
-  <meta name="description" content="Personal brand website for Samuel Onuoha – Digital Engineering, BIM/VDC, Data Analytics, Digital Twins." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/assets_style.css" />
+  <title>Samuel Onuoha — Omniverse Workflows</title>
+  <meta name="description" content="USD/Omniverse workflows, IFC→USD pipelines, federated scenes, geospatial alignment, AEC & MFG enablement." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container header-grid">
+      <div>
         <h1>Samuel Onuoha</h1>
+        <p class="tagline">Workflow & Digital Engineering — AEC & MFG • USD/Omniverse • BIM/VDC</p>
       </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#research">Research</a>
-        <a href="#repos">Repos</a>
-        <a href="#contact">Contact</a>
+      <nav class="header-nav">
+        <a data-link href="#/workflows">Workflows</a>
+        <a data-link href="#/projects">Projects</a>
+        <a data-link href="#/videos">Videos</a>
+        <a data-link href="#/about">About</a>
+        <a data-link href="#/contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero" id="about">
-      <div>
-        <span class="chip" title="Available for consulting">
-          <i></i><strong>Digital Engineering • BIM • VDC • Digital Twins</strong>
-        </span>
-        <h2>Building smarter infrastructure with data, design, and <span style="color:var(--secondary)">OpenUSD</span>.</h2>
-        <p>
-          I'm a Delivery Manager & Digital Engineering Lead with hands-on expertise in BIM/VDC, asset information, and
-          USD‑based digital twins. Right now I'm enabling geospatial-aware, non-destructive federated 3D pipelines for
-          large campuses and infrastructure asset operators so lifecycle management stays resilient as the data evolves.
-        </p>
-        <div class="cta">
-          <a class="btn primary" href="#experience">View Experience</a>
-          <a class="btn" href="#research">See Research</a>
-          <a class="btn" href="#repos">GitHub</a>
-        </div>
-        <p class="small" style="margin-top:10px">Brand palette: <span class="tag">Navy #002B5B</span><span class="tag">Orange #FFA500</span><span class="tag">Black #1C1C1C</span></p>
-      </div>
-      <div class="card md-4" style="align-self:stretch">
-        <h3>Snapshot</h3>
-        <p>• 8+ yrs across AECO delivery, asset handover, analytics<br>
-           • Revit/IFC → USD pipelines, Omniverse<br>
-           • Data validation (AIS v3), Polars/Atoti<br>
-           • Founder @ Tanech Pty Ltd</p>
-        <p class="meta">Melbourne, Australia</p>
-        <p class="meta">Email: <a href="mailto:samuel@tanech.com.au">samuel@tanech.com.au</a></p>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="section-title">
-        <h2>Experience</h2>
-        <span class="note">Selected roles & impact</span>
-      </div>
-      <ol class="timeline" id="xp-list"></ol>
-      <div class="small">Want the full CV? <a id="cv-link" href="#">Download PDF</a> (add your file in this repo and update the link).</div>
-    </section>
-
-    <section id="research">
-      <div class="section-title">
-        <h2>Personal Research</h2>
-        <span class="note">With repo & paper links</span>
-      </div>
-      <div class="card-grid" id="research-grid"></div>
-    </section>
-
-    <section id="repos">
-      <div class="section-title">
-        <h2>Featured Repos</h2>
-        <span class="note">Auto-linked to GitHub</span>
-      </div>
-      <div class="card-grid" id="repo-grid"></div>
-      <p class="small">See more on GitHub → <span class="gh">🐙 <a id="gh-handle" href="https://github.com/sonuoha" target="_blank" rel="noopener">@sonuoha</a></span></p>
-    </section>
-
-    <section id="contact">
-      <div class="section-title">
-        <h2>Contact</h2>
-        <span class="note">Let's build</span>
-      </div>
-      <div class="card">
-        <p>• Email: <a href="mailto:samuel@tanech.com.au">samuel@tanech.com.au</a><br>
-           • LinkedIn: <a href="#" id="li-link" target="_blank" rel="noopener">Add your LinkedIn URL</a><br>
-           • Company: <a href="#" id="co-link">Tanech Pty Ltd</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
+  <section class="hero">
     <div class="container">
-      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-        <span class="small">© <span id="year"></span> Samuel Onuoha. Built with ♥ and GitHub Pages.</span>
-        <span class="small">Edit content in <span class="kbd">assets/app.js</span> (DATA block).</span>
-      </div>
+      <h2>Omniverse Developer Success Focus</h2>
+      <p>I build and enable digital twin workflows across AEC &amp; MFG: IFC→USD conversion, federated USD scenes with <strong>variants &amp; payloads</strong>, and <strong>geospatial alignment</strong> (MGA55/GDA2020 + Cesium).</p>
+      <div id="cta" class="cta-row"></div>
+    </div>
+  </section>
+
+  <main id="app" class="container"></main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="y"></span> Samuel Onuoha • Built for NVIDIA Omniverse Workflow Specialist role</p>
     </div>
   </footer>
-
-  <script src="assets/app.js" defer></script>
+  <script src="data.js"></script>
+  <script src="router.js"></script>
+  <script src="components/Workflows.js"></script>
+  <script src="components/Projects.js"></script>
+  <script src="components/Videos.js"></script>
+  <script src="components/About.js"></script>
+  <script src="components/Contact.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

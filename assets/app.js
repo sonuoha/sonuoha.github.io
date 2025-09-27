@@ -1,161 +1,22 @@
-// ====== CONFIGURABLE DATA ======
-const DATA = {
-  githubUser: "sonuoha", // ← your GitHub handle
-  cvPdfUrl: "#",          // e.g. "assets/Samuel_Onuoha_CV.pdf"
-  linkedInUrl: "https://www.linkedin.com/in/", // add your slug
-  companyUrl: "https://tanech.com.au",
-  experience: [
-    {
-      role: "Delivery Manager & Digital Engineering Lead",
-      org: "(Consulting) – AECO",
-      time: "2022 – Present",
-      bullets: [
-        "Orchestrated a $4B rail + aviation digital-twin program; cut handover review latency 38% by aligning 8 design partners on a shared AIS v3/OpenUSD contract.",
-        "Engineered a geospatial-aware IFC → OpenUSD pipeline on Omniverse, streaming 5M+ entities nightly with selective payload layering for ops, design, and facilities teams.",
-        "Ran cross-functional BIM/data/DevOps guilds that codified automation playbooks and weekly labs, boosting reusable components by 60%."
-      ]
-    },
-    {
-      role: "Senior Digital Engineer / BIM Manager",
-      org: "Major VIC Infrastructure",
-      time: "2018 – 2022",
-      bullets: [
-        "Stabilized handover for a 12-station rail expansion by validating 120k+ asset attributes via GPU-accelerated Polars, cutting QA backlog 45%.",
-        "Delivered exec-ready Atoti/Power BI dashboards backed by Omniverse telemetry, giving real-time traceability across 14 discipline models.",
-        "Co-led construction + ops coordination sprints that reduced 4D/5D sequencing clashes 30% and prepped Omniverse scenarios for operations."
-      ]
-    },
-    {
-      role: "Founder",
-      org: "Tanech Pty Ltd",
-      time: "2024 – Present",
-      bullets: [
-        "Boutique consultancy advising campus operators on USD-first strategies; initial pilots cut modelling rework 18% and unlocked CloudXR-ready twins.",
-        "Leading R&D on variant/time-sample patterns that pair OpenUSD contracts with Isaac Sim resilience drills for facilities teams."
-      ]
-    }
-  ],
-  research: [
-    {
-      title: "IFC → OpenUSD Conversion Patterns for AECO",
-      summary: "Comparing custom IfcOpenShell pipelines vs Omniverse CAD Converter; strategies for materials, discipline layers, and payloading.",
-      tags: ["IFC","OpenUSD","Omniverse"],
-      links: [
-        {label: "Repo", url: "https://github.com/sonuoha/usd_for_infratsructure"},
-        {label: "Notes", url: "https://github.com/sonuoha"}
-      ]
-    },
-    {
-      title: "Asset Information Schema (AIS v3) Validation with Polars",
-      summary: "High‑performance data validation and enrichment pipeline for SRLA handover attributes.",
-      tags: ["Polars","Data Quality","SRLA"],
-      links: [
-        {label: "Repo", url: "https://github.com/sonuoha"}
-      ]
-    },
-    {
-      title: "USD Variants & Time Samples for Lifecycle Ops",
-      summary: "Representing maintenance events and retrofits via time‑sampled geometry & metadata.",
-      tags: ["OpenUSD","Digital Twin","Lifecycle"],
-      links: [
-        {label: "Concept", url: "https://openusd.org"}
-      ]
-    }
-  ],
-  featuredRepos: [
-    {
-      name: "usd_for_infratsructure",
-      description: "Prototype IFC → USD pipeline for infrastructure models.",
-      url: "https://github.com/sonuoha/usd_for_infratsructure",
-      topics: ["openusd","ifc","aeco"]
-    },
-    {
-      name: "aeco-ais-polars",
-      description: "Polars-based AIS v3 validator (example repo – rename).",
-      url: "https://github.com/sonuoha",
-      topics: ["polars","data-validation","aeco"]
-    }
-  ]
-};
+// App bootstrap
+(function(){
+  const l = window.__APP_DATA__.links;
+  // CTA buttons
+  const cta = document.getElementById('cta');
+  cta.innerHTML = `
+    <a class="btn primary" href="${l.resumeUS}" target="_blank" rel="noopener">Resume (US Letter)</a>
+    <a class="btn" href="${l.resumeA4}" target="_blank" rel="noopener">Resume (A4)</a>
+    <a class="btn" href="${l.portfolio}" target="_blank" rel="noopener">1‑Page Portfolio</a>
+    <a class="btn" href="${l.repoIFCUSD}" target="_blank" rel="noopener">GitHub – IFC→USD Pipeline</a>
+  `;
 
-// ====== HELPERS ======
-const $ = sel => document.querySelector(sel);
-const $$ = sel => document.querySelectorAll(sel);
-function el(tag, attrs={}, children=[]) {
-  const node = document.createElement(tag);
-  Object.entries(attrs).forEach(([k,v])=>{
-    if(k==="class") node.className = v; else if(k==="html") node.innerHTML=v; else node.setAttribute(k,v);
-  });
-  children.forEach(c => node.appendChild(typeof c === 'string' ? document.createTextNode(c) : c));
-  return node;
-}
+  // Router render mount
+  const mount = document.getElementById('app');
+  window.__renderView = function(view){
+    const map = { Workflows, Projects, Videos, About, Contact };
+    mount.innerHTML = (map[view] ? map[view]() : Workflows());
+  };
 
-// ====== RENDERERS ======
-function renderExperience(){
-  const xpRoot = document.querySelector("#xp-list");
-  if(!xpRoot) return;
-  DATA.experience.forEach(xp => {
-    const li = el("li", {class:"t-item"}, [
-      el("div", {class:"t-role"}, [document.createTextNode(`${xp.role}`)]),
-      el("div", {class:"meta"}, [document.createTextNode(`${xp.org} • ${xp.time}`)]),
-      el("ul", {}, xp.bullets.map(b => el("li", {}, [b])))
-    ]);
-    xpRoot.appendChild(li);
-  });
-}
-
-function renderResearch(){
-  const rRoot = document.querySelector("#research-grid");
-  if(!rRoot) return;
-  DATA.research.forEach(r => {
-    const links = el("p", {}, r.links.map((lnk,i)=>{
-      const a = el("a", {href:lnk.url, target:"_blank", rel:"noopener"}, [lnk.label]);
-      if(i < r.links.length-1){ return [a, document.createTextNode(" · ")]; }
-      return [a];
-    }).flat());
-    const tags = el("p", {}, r.tags.map(t=> el("span", {class:"tag"}, [t])));
-    const card = el("article", {class:"card md-6"}, [
-      el("h3", {}, [r.title]),
-      el("p", {}, [r.summary]),
-      tags,
-      links
-    ]);
-    rRoot.appendChild(card);
-  });
-}
-
-function renderRepos(){
-  const repoRoot = document.querySelector("#repo-grid");
-  if(!repoRoot) return;
-  DATA.featuredRepos.forEach(repo => {
-    const topics = el("p", {}, (repo.topics||[]).map(t=> el("span", {class:"tag"}, [t])));
-    const card = el("article", {class:"card md-4"}, [
-      el("h3", {}, [repo.name]),
-      el("p", {}, [repo.description||""]),
-      topics,
-      el("p", {}, [el("a", {href:repo.url, target:"_blank", rel:"noopener"}, ["View on GitHub →"])])
-    ]);
-    repoRoot.appendChild(card);
-  });
-}
-
-function wireMeta(){
-  const gh = document.querySelector("#gh-handle");
-  if(gh) gh.href = `https://github.com/${DATA.githubUser}`;
-  const cv = document.querySelector("#cv-link");
-  if(cv) cv.href = DATA.cvPdfUrl;
-  const li = document.querySelector("#li-link");
-  if(li) li.href = DATA.linkedInUrl;
-  const co = document.querySelector("#co-link");
-  if(co) co.href = DATA.companyUrl;
-  const yr = document.querySelector("#year");
-  if(yr) yr.textContent = new Date().getFullYear();
-}
-
-// ====== INIT ======
-document.addEventListener("DOMContentLoaded", () => {
-  renderExperience();
-  renderResearch();
-  renderRepos();
-  wireMeta();
-});
+  // Footer year
+  document.getElementById('y').textContent = new Date().getFullYear();
+})();
