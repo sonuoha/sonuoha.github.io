@@ -1,8 +1,8 @@
 // Central config so the app is data-driven
 window.__APP_DATA__ = {
   links: {
-    resumeUS: "Samuel_Onuoha_Resume_NVIDIA_Final_US_Letter.pdf",
-    resumeA4: "Samuel_Onuoha_Resume_NVIDIA_Final.pdf",
+    resumeUS: "assets/files/Samuel_Onuoha_Resume.pdf",
+    resumeA4: "assets/files/Samuel_Onuoha_Resume.pdf",
     portfolio: "Samuel_Onuoha_Omniverse_Portfolio.pdf",
     repoIFCUSD: "https://github.com/sonuoha/usd_for_infratsructure",
     linkedin: "https://www.linkedin.com/in/samuelonuoha",
