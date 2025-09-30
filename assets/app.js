@@ -1,13 +1,13 @@
-// App bootstrap
+﻿// App bootstrap
 (function(){
-  const l = window.__APP_DATA__.links;
+  const links = window.__APP_DATA__.links;
   // CTA buttons
   const cta = document.getElementById('cta');
   cta.innerHTML = `
-    <a class="btn primary" href="${l.resumeUS}" target="_blank" rel="noopener">Resume (US Letter)</a>
-    <a class="btn" href="${l.resumeA4}" target="_blank" rel="noopener">Resume (A4)</a>
-    <a class="btn" href="${l.portfolio}" target="_blank" rel="noopener">1‑Page Portfolio</a>
-    <a class="btn" href="${l.repoIFCUSD}" target="_blank" rel="noopener">GitHub – IFC→USD Pipeline</a>
+    <a class="btn primary" href="${links.resumeUS}" target="_blank" rel="noopener">Resume (US Letter)</a>
+    <a class="btn" href="${links.resumeA4}" target="_blank" rel="noopener">Resume (A4)</a>
+    <a class="btn" href="${links.portfolio}" target="_blank" rel="noopener">One-Page Portfolio</a>
+    <a class="btn" href="${links.repoIFCUSD}" target="_blank" rel="noopener">GitHub - IFC to USD Pipeline</a>
   `;
 
   // Router render mount
