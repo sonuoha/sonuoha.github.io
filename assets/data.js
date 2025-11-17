@@ -79,7 +79,7 @@ window.__APP_DATA__ = {
       {
         title: "IIoT, Automation & Operational Technologies",
         bullets: [
-          "Certified KNX and LonTalk/LonWorks engineer with BACnet experience",
+          `Certified KNX and LonTalk/LonWorks engineer (<a href="https://www.lonmark.org/technology/certification/certified-professionals-list/" target="_blank" rel="noopener">LonMark Certified Professional</a>) with BACnet experience`,
           "Controls + building automation integration into OT/IT flows",
           "Sensor and telemetry ingestion patterns that land in digital twins",
           "Edge-to-cloud data strategies for operations intelligence"
