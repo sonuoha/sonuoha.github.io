@@ -9,36 +9,43 @@ window.__APP_DATA__ = {
   },
   workflows: [
     {
-      title: "IFC to USD conversion pipelines",
-      summary: "Python + ifcopenshell automation that produces clean USD assets with reusable schemas for attributes, materials, and discipline layers."
+      title: "Asset twin playbooks",
+      summary: "USD asset templates that connect design, commissioning, and live telemetry so operators inherit a continuously updated digital thread for rail, aviation, and industrial assets."
     },
     {
-      title: "Federated USD scenes",
-      summary: "Variants, payload strategies, and time-sampled datasets tuned for on-demand loading across Omniverse Kit, Composer, and live collaboration sessions."
+      title: "Delivery control rooms",
+      summary: "Omniverse-enabled coordination spaces where design, construction sequencing, and delivery KPIs land in one federated stage with governance baked into variants and payload policy."
     },
     {
-      title: "Geospatial alignment & Cesium context",
-      summary: "Precise alignment of BIM models to MGA55/GDA2020 plus Cesium terrain streaming to navigate linear rail and airport precincts with confidence."
+      title: "Geospatial + systems integration",
+      summary: "Geodesy, Cesium terrain, and operational data bus integrations that keep spatial context, simulation data, and maintenance records aligned down to centimeter precision."
     },
     {
-      title: "Customer enablement programs",
-      summary: "Demo flows, enablement kits, and structured feedback loops that connect customers, product, and engineering for shipping better workflows."
+      title: "Enablement + platform ops",
+      summary: "Frameworks for training, support, and DevRel feedback loops that turn complex Omniverse proofs into repeatable services for Digital Project Delivery teams."
     }
   ],
   projects: [
     {
-      title: "IFC to USD Conversion and Federated Scenes",
-      body: "End-to-end pipeline producing performant USD assets and a master federated stage. Supports discipline layers, time samples, and asset metadata for operations.",
+      title: "BuildUSD & Asset Ops Toolchain",
+      body: "Reference implementation that ingests IFC, reality capture, and OT data into USD, then packages asset views for operations, maintenance, and immersive training.",
       chips: ["Python","ifcopenshell","OpenUSD","Omniverse"],
       repo: "https://github.com/sonuoha/BuildUSD",
       pdf: "assets/files/Samuel_Onuoha_Omniverse_Portfolio.pdf"
     },
     {
-      title: "Geospatial and Cesium Integration",
-      body: "Alignment of BIM with survey coordinates (MGA55/GDA2020), streamed context in Cesium for accurate site visualization and navigation across large-scale assets.",
-      chips: ["Cesium","MGA55/GDA2020","GIS"],
+      title: "Geospatial Operations Fabric",
+      body: "End-to-end alignment of BIM, SCADA alarms, and Cesium tiles so asset operators can interrogate incidents spatially, run playbooks, and push updates back to delivery teams.",
+      chips: ["Cesium","MGA55/GDA2020","IoT"],
       repo: null,
       pdf: null
+    },
+    {
+      title: "Digital Project Delivery Insights",
+      body: "Dashboards, AI-assisted reviews, and USD snapshots that give leadership a living record of delivery KPIs, clashes, handover readiness, and asset readiness in one workspace.",
+      chips: ["Analytics","USD","AI-Assisted QA"],
+      repo: null,
+      pdf: "assets/files/Samuel_Onuoha_Omniverse_Portfolio.pdf"
     }
   ],
   videos: [
@@ -47,11 +54,54 @@ window.__APP_DATA__ = {
     { title: "Geospatial: MGA55 plus Cesium", href: "#" }
   ],
   about: {
-    bullets: [
-      "MSc Global BIM Management - Zigurat",
-      "Grad Cert Data Analytics - Deakin",
-      "NVIDIA DLI - OpenUSD and Omniverse learning paths"
+    introTitle: "Hi, I'm Samuel",
+    introLead: "I build unified digital systems that connect engineering, automation, data, and simulation.",
+    domains: [
+      {
+        title: "Digital Engineering & Information Models",
+        bullets: [
+          "BIM/VDC delivery across Revit, Navisworks, Civil 3D",
+          "IFC/ifcopenshell automation aligned to ISO 19650 data standards",
+          "OpenUSD + Omniverse pipelines (IFC → USD) and federated scenes",
+          "Geometry automation with OpenCascade",
+          "Geospatial alignment and digital twin governance"
+        ]
+      },
+      {
+        title: "Data Engineering & Analytics",
+        bullets: [
+          "Python (polars, pandas), SQL, Databricks, REST integrations",
+          "Metadata modeling, data quality scoring, validation engines",
+          "Power BI dashboards for delivery + operations KPIs",
+          "ETL/ELT pipelines that blend BIM, GIS, IoT, and ERP systems"
+        ]
+      },
+      {
+        title: "IIoT, Automation & Operational Technologies",
+        bullets: [
+          "Certified KNX and LonTalk/LonWorks engineer with BACnet experience",
+          "Controls + building automation integration into OT/IT flows",
+          "Sensor and telemetry ingestion patterns that land in digital twins",
+          "Edge-to-cloud data strategies for operations intelligence"
+        ]
+      },
+      {
+        title: "Multimethod Simulation (AnyLogic)",
+        bullets: [
+          "Agent-based, discrete event, system dynamics, and hybrid simulations",
+          "Operations modeling for logistics, risk, pedestrian flow",
+          "Scenario analysis and predictive behavior modeling that loops back into delivery"
+        ]
+      }
     ],
-    blurb: "Digital engineering lead with 10+ years across rail, airports, and commercial sectors. Hands-on with USD, Omniverse, BIM/VDC, and data analytics. Comfortable working between customers and product teams to remove friction and ship better workflows."
+    whatIBuild: [
+      "High-performance IFC → USD converters",
+      "Federated, geospatially aligned digital twins",
+      "Data engines connecting BIM/GIS/IoT/ERP systems",
+      "OT–IT integration pipelines for operational intelligence",
+      "AnyLogic simulation models for planning & optimization",
+      "Geometry processing workflows powered by OpenCascade"
+    ],
+    mission: "Connect the physical environment, its digital model, its data, and its behavior — into one unified system for better decisions and better operations."
   }
 };

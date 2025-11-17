@@ -13,8 +13,8 @@
       </article>`;
     }).join('');
     return `<section class="section">
-      <h3>Workflow Clips</h3>
-      <p>Short walkthroughs (30-90s) that demonstrate specific workflow checkpoints for Developer Success reviews.</p>
+      <h3>Field Notes</h3>
+      <p>Short walkthroughs (30-90s) spotlighting critical checkpoints in digital project delivery, asset activation, and Omniverse enablement.</p>
       <div class="video-grid">${cards}</div>
     </section>`;
   }

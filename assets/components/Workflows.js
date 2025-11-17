@@ -9,8 +9,8 @@
       </li>
     `).join('');
     return `<section class="section">
-      <h3>Workflow Dispatch</h3>
-      <p>Glanceable highlights from current Omniverse workflow builds, tuned for Developer Success reviews.</p>
+      <h3>Digital Engineering Dispatch</h3>
+      <p>A snapshot of how I engineer, govern, and operationalize Omniverse workflows across asset operations and delivery teams.</p>
       <ul class="story-list">${stories}</ul>
     </section>`;
   }

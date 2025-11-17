@@ -313,11 +313,46 @@ a:hover{color:var(--accent-dark)}
   box-shadow:none;
 }
 .card h4{margin-top:0}
+.card-divider{
+  margin:20px 0;
+  border-top:1px solid rgba(15,23,42,.12);
+}
 .bullets{
   padding-left:18px;
   color:#1e293b;
 }
 .bullets li{margin:8px 0}
+.domain-block{
+  margin-bottom:26px;
+  padding-bottom:22px;
+  border-bottom:1px solid #ede8e0;
+}
+.domain-block:last-of-type{
+  margin-bottom:0;
+  padding-bottom:0;
+  border-bottom:none;
+}
+.domain-block h4{
+  margin:6px 0 8px;
+}
+.mission-callout{
+  margin-top:32px;
+  padding:24px 26px;
+  border-radius:20px;
+  border:1px solid rgba(0,133,161,.2);
+  background:#f8fbff;
+  color:#0f172a;
+  line-height:1.7;
+  box-shadow:0 18px 30px rgba(15,18,38,.05);
+}
+.mission-label{
+  display:inline-block;
+  text-transform:uppercase;
+  letter-spacing:.35em;
+  font-size:.7rem;
+  color:var(--accent);
+  margin-bottom:10px;
+}
 .muted-text{
   color:var(--muted);
   margin-top:8px;

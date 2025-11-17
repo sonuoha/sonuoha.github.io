@@ -16,8 +16,8 @@
       </article>`;
     }).join('');
     return `<section class="section">
-      <h3>Build Notes</h3>
-      <p>Deep dives that back up the hero workflows with code, structure, and customer outcomes.</p>
+      <h3>Digital Engineering Programs</h3>
+      <p>Case studies that show how Omniverse, USD, and data platforms converge to serve asset operations, delivery control, and leadership reporting.</p>
       <div class="project-grid">${cards}</div>
     </section>`;
   }
