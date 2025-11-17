@@ -1,26 +1,36 @@
 ﻿// Central config so the app is data-driven
 window.__APP_DATA__ = {
   links: {
-    resumeUS: "assets/files/Samuel_Onuoha_Resume.pdf",
-    resumeA4: "assets/files/Samuel_Onuoha_Resume.pdf",
     portfolio: "assets/files/Samuel_Onuoha_Omniverse_Portfolio.pdf",
-    repoIFCUSD: "https://github.com/sonuoha/usd_for_infratsructure",
+    repoBuildUSD: "https://github.com/sonuoha/BuildUSD",
     linkedin: "https://www.linkedin.com/in/samuelonuoha",
     email: "mailto:samuel.onuoha@outlook.com",
     homepage: "https://sonuoha.github.io"
   },
   workflows: [
-    "IFC to USD pipelines (Python, ifcopenshell, USD APIs) with reusable schemas for attributes and materials.",
-    "Federated USD scenes using variants and payload strategies for scalable, on-demand loading in Omniverse Composer and Kit.",
-    "Geospatial alignment of BIM models (MGA55/GDA2020) and Cesium context streaming for linear rail and airport precincts.",
-    "Customer enablement: demo flows, training assets, and structured feedback to product and engineering."
+    {
+      title: "IFC to USD conversion pipelines",
+      summary: "Python + ifcopenshell automation that produces clean USD assets with reusable schemas for attributes, materials, and discipline layers."
+    },
+    {
+      title: "Federated USD scenes",
+      summary: "Variants, payload strategies, and time-sampled datasets tuned for on-demand loading across Omniverse Kit, Composer, and live collaboration sessions."
+    },
+    {
+      title: "Geospatial alignment & Cesium context",
+      summary: "Precise alignment of BIM models to MGA55/GDA2020 plus Cesium terrain streaming to navigate linear rail and airport precincts with confidence."
+    },
+    {
+      title: "Customer enablement programs",
+      summary: "Demo flows, enablement kits, and structured feedback loops that connect customers, product, and engineering for shipping better workflows."
+    }
   ],
   projects: [
     {
       title: "IFC to USD Conversion and Federated Scenes",
       body: "End-to-end pipeline producing performant USD assets and a master federated stage. Supports discipline layers, time samples, and asset metadata for operations.",
       chips: ["Python","ifcopenshell","OpenUSD","Omniverse"],
-      repo: "https://github.com/sonuoha/usd_for_infratsructure",
+      repo: "https://github.com/sonuoha/BuildUSD",
       pdf: "assets/files/Samuel_Onuoha_Omniverse_Portfolio.pdf"
     },
     {

@@ -3,12 +3,27 @@
   const links = window.__APP_DATA__.links;
   // CTA buttons
   const cta = document.getElementById('cta');
-  cta.innerHTML = `
-    <a class="btn primary" href="${links.resumeUS}" target="_blank" rel="noopener">Resume (US Letter)</a>
-    <a class="btn" href="${links.resumeA4}" target="_blank" rel="noopener">Resume (A4)</a>
-    <a class="btn" href="${links.portfolio}" target="_blank" rel="noopener">One-Page Portfolio</a>
-    <a class="btn" href="${links.repoIFCUSD}" target="_blank" rel="noopener">GitHub - IFC to USD Pipeline</a>
-  `;
+  const ctas = [
+    { label: "1-Page Portfolio", href: links.portfolio, accent: true },
+    { label: "GitHub &middot; BuildUSD", href: links.repoBuildUSD }
+  ];
+  cta.innerHTML = ctas.map(item => `
+    <a class="btn ${item.accent ? 'primary' : 'dark'}" href="${item.href}" target="_blank" rel="noopener">${item.label}</a>
+  `).join('');
+
+  // mobile nav toggle
+  const nav = document.querySelector('.site-nav');
+  const toggle = document.querySelector('.nav-toggle');
+  if(toggle && nav){
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  }
+  document.querySelectorAll('.header-nav a').forEach(link => {
+    link.addEventListener('click', () => nav && nav.classList.remove('open'));
+  });
+  const brand = document.querySelector('.brand');
+  if(brand){
+    brand.addEventListener('click', () => nav && nav.classList.remove('open'));
+  }
 
   // Router render mount
   const mount = document.getElementById('app');

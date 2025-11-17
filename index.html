@@ -8,31 +8,38 @@
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-grid">
-      <div>
-        <h1>Samuel Onuoha</h1>
-        <p class="tagline">Workflow and Digital Engineering - AEC and MFG - USD/Omniverse - BIM/VDC</p>
-      </div>
-      <nav class="header-nav">
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" data-link href="#/workflows">Samuel Onuoha</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="header-nav">
         <a data-link href="#/workflows">Workflows</a>
         <a data-link href="#/projects">Projects</a>
         <a data-link href="#/videos">Videos</a>
         <a data-link href="#/about">About</a>
         <a data-link href="#/contact">Contact</a>
-      </nav>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead">
+    <div class="masthead-overlay">
+      <div class="container hero-content">
+        <p class="eyebrow">Omniverse Workflows &middot; Digital Delivery</p>
+        <h1>Samuel Onuoha</h1>
+        <p class="hero-copy">Workflow and Digital Engineering across AEC and MFG &mdash; USD/Omniverse expert focused on federated scenes, IFC-to-USD conversion, and geospatial alignment.</p>
+        <div id="cta" class="hero-cta"></div>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h2>Omniverse Developer Success Focus</h2>
-      <p>I build and enable digital twin workflows across AEC and MFG: IFC-to-USD conversion, federated USD scenes with <strong>variants and payloads</strong>, and <strong>geospatial alignment</strong> (MGA55/GDA2020 plus Cesium).</p>
-      <div id="cta" class="cta-row"></div>
-    </div>
-  </section>
-
-  <main id="app" class="container"></main>
+  <main class="content-shell">
+    <div id="app" class="container"></div>
+  </main>
 
   <footer class="site-footer">
     <div class="container">
